@@ -18,9 +18,9 @@ export default {
       search: '',
       reps: [
         { id: '1',
-          name: 'James Deboxtel',
+          name: 'James Guy',
           phone: '555-555-5555',
-          email: 'james@enovate-medical.com',
+          email: 'james@email.com',
           zipCodes: [
             '37209',
             '37205',
@@ -29,7 +29,7 @@ export default {
         { id: '2',
           name: 'Jimmy Dean',
           phone: '555-555-5555',
-          email: 'jimmy@enovate-medical.com',
+          email: 'jimmy@email.com',
           zipCodes: [
             '37208',
           ],
@@ -37,7 +37,7 @@ export default {
         { id: '3',
           name: 'Oscar Meyer',
           phone: '555-555-5555',
-          email: 'oscar@enovate-medical.com',
+          email: 'oscar@email.com',
           zipCodes: [
             '37207',
           ],
