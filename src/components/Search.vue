@@ -1,10 +1,11 @@
 <template>
   <div id="app" class="container">
-    <h2>Zipcode Finder</h2>
+    <h2>Search for a Sales Rep</h2>
     <div class="form">
-      <input type="text"  maxlength="5" placeholder="ex: 94301" ref="search_input" />
-      <input type="submit" @click.prevent="getFormValue()"/>
+      <input type="text"  maxlength="5" placeholder="Enter a 5 Digit ZipCode" ref="search_input" />
+      <button type="submit" @click.prevent="getFormValue()">Submit</button>
     </div>
+    <hr>
     <div id="result"></div>
   </div>
 </template>
@@ -87,5 +88,36 @@ li {
 }
 a {
   color: #42b983;
+}
+
+input {
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 8px;
+  font-size: 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+
+button {
+  box-shadow: none;
+  -webkit-appearance: none;
+  font-size: 18px;
+  padding: 8px 20px;
+  border-radius: 25px;
+  background: orange;
+  color: white;
+  border: none;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: black;
+  color: orange;
 }
 </style>
