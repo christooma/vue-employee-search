@@ -1,18 +1,25 @@
 <template>
   <div id="app" class="container">
-    <h2>Search for a Sales Rep</h2>
+    <h2>Search for an Account Executive</h2>
     <div class="form">
       <input type="text"  maxlength="5" placeholder="Enter a 5 Digit ZipCode" ref="search_input" />
-      <button type="submit" @click.prevent="getFormValue()">Submit</button>
+      <button type="submit" @click.prevent="getFormValue()">Search</button>
     </div>
     <hr>
-    <div id="result"></div>
+    <modal v-show="isModalVisible" @close="closeModal" />
+
   </div>
 </template>
 
 <script>
+
+import modal from '@/components/modal';
+
 export default {
   name: 'Search',
+  components: {
+    modal,
+  },
   data() {
     return {
       search: '',
@@ -43,11 +50,15 @@ export default {
           ],
         },
       ],
+      isModalVisible: false,
     };
   },
   methods: {
+    closeModal() {
+      this.isModalVisible = false;
+    },
     getFormValue() {
-      var search = this.$refs.search_input.value;
+      const search = this.$refs.search_input.value;
       var i = 0;
       var j = 0;
       for ( i=0; i < this.reps.length; i++ ) {
@@ -61,11 +72,13 @@ export default {
             break;
           }
         }
-        if(found) {
-            document.getElementById("result").innerHTML = JSON.stringify(zipResult);
+        if (found) {
+          this.isModalVisible = true;
+          document.getElementById('result').innerHTML = JSON.stringify(zipResult);
         }
-        if(!found) {
-          document.getElementById("result").innerHTML = 'No sales rep found for this zipcode.';
+        if (!found) {
+          this.isModalVisible = true;
+          document.getElementById('result').innerHTML = 'No sales rep found for this zipcode.';
         }
       }
     },
@@ -120,4 +133,5 @@ button:hover {
   background: black;
   color: orange;
 }
+
 </style>
