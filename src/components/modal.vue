@@ -18,7 +18,8 @@
       <section class="modal-body">
         <slot name="body">
           <pre>
-          <div id="result"></div>
+          <div id="result">
+          </div>
           </pre>
         </slot>
        </section>
@@ -66,6 +67,9 @@
     min-width: 300px;
     width: 70%;
     max-width: 650px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
   }
 
   .modal-header,

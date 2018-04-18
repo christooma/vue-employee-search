@@ -74,7 +74,10 @@ export default {
         }
         if (found) {
           this.isModalVisible = true;
-          document.getElementById('result').innerHTML = JSON.stringify(zipResult);
+          var combo = JSON.stringify(zipResult);
+          var obj = JSON.parse(combo);
+
+          var result = document.getElementById('result').innerHTML = '<p>' + obj.name + '</p>' + '<p>' + obj.email + '</p>' + '<p>' + obj.phone + '</p>';
         }
         if (!found) {
           this.isModalVisible = true;
