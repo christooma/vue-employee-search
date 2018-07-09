@@ -1,47 +1,48 @@
 <template>
-<transition name="modal-fade">
-  <div class="modal-backdrop">
-    <div class="modal">
-      <header class="modal-header">
-        <slot name="header">
-          Your Account Executive is:
+  <transition name="modal-fade">
+    <div class="modal-backdrop">
+      <div class="modal">
+        <header class="modal-header">
+          <slot name="header">
+            Your Account Executive is:
 
-          <button
-            type="button"
-            class="btn-close"
-            @click="close"
-          >
-            x
-          </button>
-        </slot>
-      </header>
-      <section class="modal-body">
-        <slot name="body">
-          <pre>
-          <div id="result">
-          </div>
-          </pre>
-        </slot>
-       </section>
-       <footer class="modal-footer">
-          <slot name="footer">
+            <button
+              type="button"
+              class="btn-close"
+              @click="close"
+            >
+              x
+            </button>
+          </slot>
+        </header>
+        <section class="modal-body">
+          <slot name="body">
+            <pre>
+            <div id="result">
+            </div>
+            </pre>
+          </slot>
+        </section>
+        <footer class="modal-footer">
+            <slot name="footer">
 
-        </slot>
-      </footer>
+          </slot>
+        </footer>
+      </div>
     </div>
-  </div>
-</transition>
+  </transition>
 </template>
 
 <script>
-  export default {
-    name: 'modal',
-    methods: {
-      close() {
-        this.$emit('close');
-      },
+/* eslint-disable */
+export default {
+  name: 'modal',
+  methods: {
+    close() {
+      this.$emit('close');
     },
-  };
+  },
+};
 </script>
 
 <style>

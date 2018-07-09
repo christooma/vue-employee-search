@@ -12,6 +12,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 
 import modal from '@/components/modal';
 
